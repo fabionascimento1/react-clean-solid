@@ -1,7 +1,7 @@
 import { AccountModel } from '../models/account-model'
 
 interface AuthenticationParams {
-  login: string
+  email: string
   password: string
 }
 

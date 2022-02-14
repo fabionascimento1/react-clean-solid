@@ -5,7 +5,7 @@ import Footer from '@/presentation/components/footer'
 import Input from '@/presentation/components/input'
 import FormStatus from '@/presentation/components/form-status'
 import Context from '@/presentation/contexts/form/form-context'
-import { Validation } from '@/presentation/protocols/validantion'
+import { Validation } from '@/presentation/protocols/validation'
 
 type Props = {
   validation: Validation

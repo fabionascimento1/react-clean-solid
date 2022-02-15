@@ -33,14 +33,22 @@ const Login: React.FC<Props> = ({ validation, authentication }: Props) => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault()
-    if (state.isLoding || state.emailError || state.passwordError) {
-      return
+    try {
+      if (state.isLoding || state.emailError || state.passwordError) {
+        return
+      }
+      setState({ ...state, isLoding: true })
+      await authentication.auth({
+        email: state.email,
+        password: state.password
+      })
+    } catch (error) {
+      setState({
+        ...state,
+        isLoding: false,
+        mainError: error.message
+      })
     }
-    setState({ ...state, isLoding: true })
-    await authentication.auth({
-      email: state.email,
-      password: state.password
-    })
   }
 
   return (

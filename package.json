@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:base": "webpack-dev-server --config webpack.dev.js",
-    "dev": "npm run dev:base -- --open"
+    "dev": "npm run dev:base -- --open",
+    "check": "npm-check -u -s"
   },
   "keywords": [],
   "author": "",
